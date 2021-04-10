@@ -13,7 +13,7 @@ layout: default
     </div>
     <div class="md-posts-categories" style="position: static; margin-top: 4px;">
         {% for category in page.categories %}
-        <a href="/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
+        <a href="{{ site.base_url }}/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
         {% endfor %}
     </div>
     <div class="md-blog_single-image" style="background-image: url('{{ page.image }}');"></div>
@@ -22,7 +22,7 @@ layout: default
     </div>
     <div class="md-tags">
         {% for tag in page.tags %}
-        <a href="/tags?name={{ tag }}" class="md-tags-item">
+        <a href="{{ site.base_url }}/tags?name={{ tag }}" class="md-tags-item">
             {{ tag }}
         </a>
         {% endfor %}
@@ -35,17 +35,17 @@ layout: default
         {% assign relatedPosts = site.related_posts | slice: 0, 4 %}
         {% for post in relatedPosts %}
         <div class="md-posts-item">
-            <a href="{{ post.url }}" class="md-posts-item-cover">
+            <a href="{{ site.base_url }}{{ post.url }}" class="md-posts-item-cover">
                 <div class="md-posts-item-img" style="background-image: url('{{ post.image }}');">
                 </div>
             </a>
             <div class="md-posts-categories">
                 {% for category in post.categories %}
-                <a href="/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
+                <a href="{{ site.base_url }}/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
                 {% endfor %}
             </div>
             <div class="md-posts-item-content">
-                <a href="{{ post.url }}" class="md-posts-item-title">
+                <a href="{{ site.base_url }}{{ post.url }}" class="md-posts-item-title">
                     {{ post.title }}
                 </a>
                 <div class="md-posts-item-summary">

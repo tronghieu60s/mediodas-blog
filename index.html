@@ -10,17 +10,17 @@ title: Trang Chủ
     <div class="md-posts">
         {% for post in paginator.posts %}
         <div class="md-posts-item">
-            <a href="{{ post.url }}" class="md-posts-item-cover">
+            <a href="{{ site.base_url }}/{{ post.url }}" class="md-posts-item-cover">
                 <div class="md-posts-item-img" style="background-image: url('{{ post.image }}');">
                 </div>
             </a>
             <div class="md-posts-categories">
                 {% for category in post.categories %}
-                <a href="/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
+                <a href="{{ site.base_url }}/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
                 {% endfor %}
             </div>
             <div class="md-posts-item-content">
-                <a href="{{ post.url }}" class="md-posts-item-title">
+                <a href="{{ site.base_url }}/{{ post.url }}" class="md-posts-item-title">
                     {{ post.title }}
                 </a>
                 <div class="md-posts-item-summary">
@@ -42,10 +42,10 @@ title: Trang Chủ
     </div>
     {% if paginator.total_pages > 1 %}
     <div class="md-pagination">
-        <a {% if paginator.previous_page %} class="active" {% endif %} href="{{ paginator.previous_page_path }}">←
+        <a {% if paginator.previous_page %} class="active" {% endif %} href="{{ site.base_url }}{{ paginator.previous_page_path }}">←
             Newer</a>
         <div class="md-pagination-page">Page: {{ paginator.page }} of {{ paginator.total_pages }}</div>
-        <a {% if paginator.next_page %} class="active" {% endif %} href="{{ paginator.next_page_path }}">Older →</a>
+        <a {% if paginator.next_page %} class="active" {% endif %} href="{{ site.base_url }}{{ paginator.next_page_path }}">Older →</a>
     </div>
     {% endif %}
 </section>
