@@ -10,7 +10,7 @@ title: Trang Chủ
     <div class="md-posts">
         {% for post in paginator.posts %}
         <div class="md-posts-item">
-            <a href="{{ site.base_url }}/{{ post.url }}" class="md-posts-item-cover">
+            <a href="{{ site.base_url }}{{ post.url }}" class="md-posts-item-cover">
                 <div class="md-posts-item-img" style="background-image: url('{{ post.image }}');">
                 </div>
             </a>
@@ -20,7 +20,7 @@ title: Trang Chủ
                 {% endfor %}
             </div>
             <div class="md-posts-item-content">
-                <a href="{{ site.base_url }}/{{ post.url }}" class="md-posts-item-title">
+                <a href="{{ site.base_url }}{{ post.url }}" class="md-posts-item-title">
                     {{ post.title }}
                 </a>
                 <div class="md-posts-item-summary">
